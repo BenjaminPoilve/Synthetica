@@ -11,7 +11,7 @@ I will use a teensy as main board for a few reason:
 
 Ok, so let's get started! 
 
-##BOM
+## BOM
 
 #### Power
 
@@ -30,7 +30,7 @@ The teensy 3.6 will do:
 
 Will take inspiration from [here](https://github.com/ghztomash/fasma_drum/blob/master/hardware/Fasma%20Drum%20Schematics.PDF)  for the filter then run it into a [LM4911](http://www.ti.com/lit/ds/symlink/lm4911.pdf) to get it to headphone level
 
-I should not forget to run a wire from the split analogue ground part back to the AGND pin 
+I should not forget to run a wire from the split analogue ground part back to the AGND pin. Check if it is ok to have a separate AGND gnd plane, and star wire it. 
 
 #### Potentiometers and DIP switch and other hardware
 
@@ -38,24 +38,34 @@ Will use [those pot](https://fr.farnell.com/bourns/ptv09a-4020u-b104/potentiom-r
 Will use [those switch](https://fr.farnell.com/c-k-components/js102011saqn/commutateur-spdt-0-6a-6vdc-lateral/dp/2320017?st=JS102011SAQN)
 Will use [this](https://fr.farnell.com/c-k-components/sda03h1bd/commutateur-raised-3-voies-tht/dp/2320098) for chord slection, and [this](https://fr.farnell.com/lumberg/klbr-4/embase-femelle-chassis-3-5mm/dp/1217016) for headphone
 
-Add a calibration button and a led
+Add a led
 
 #### Capacitive sensor
 
 Will get inspiration from [this guide](http://www.patternagents.com/news/2013/11/24/eagle-touch-widgets-library.html) for design.
 Will be major only, minor by transposition as with the harmonica. Choice of chords, look [here](https://www.hooktheory.com/blog/i-analyzed-the-chords-of-1300-popular-songs-for-patterns-this-is-what-i-found/)
 
+add bare gnd surface on the back for grounding. Or check if it's ok with only ground plane.
+
 
 #### Summing Up
 
-| Part Name  |  Value | Reference document | Trace Present  |   
+| Part Name  |  Value | Reference document | Count |   
 |---|---|---|---|
-|  Teensy 3.6  | None  | [:link:](https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.solarbotics.com%2Fproducts%2Fdatasheets%2Fks_t_3.6f.png&f=1)   | Yes  |   
-| PTV09A-4020U-B104 Pot |  None  | [:link:](https://www.farnell.com/datasheets/2259384.pdf)  | Yes  |  
-| DIP SDA03H1BD  | None  | [:link:](https://www.farnell.com/datasheets/2706256.pdf)  | Yes  | 
-| DP3T OS203012MU5QP1  | None  | [:link:](https://www.farnell.com/datasheets/2674787.pdf)  | Yes  |  
-| Battery Holder | None | [:link](https://www.farnell.com/datasheets/2300356.pdf) | Yes (sparkfun lib)| 
-|Tactile switch| None | [:link:](https://fr.farnell.com/c-k-components/kmr211g-lfs/tactile-commutateur-1-2n/dp/1437635?st=KMR2) | Yes (KMR2)| 
-|MPC6002| None | [:link:](https://fr.farnell.com/microchip/mcp6002-e-sn/ampli-op-double-1mhz-cms/dp/1332118?scope=partnumberlookahead&ost=MCP6002-E%2FSN&searchref=searchlookahead&exaMfpn=true&ddkey=https%3Afr-FR%2FElement14_France%2Fw%2Fsearch) | Yes | 
-|LM4911| None | [:link:](http://www.ti.com/lit/ds/symlink/lm4911.pdf#%5B%7B%22num%22%3A30%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C0%2C379.5%2C0%5D) | Yes |
-| FC68131 | None | [:link:](https://fr.farnell.com/cliff-electronic-components/fc68131/jack-stereo-3-5mm-3-voies-carte/dp/2518188) | Yes (sparkfun) |  
+|  Teensy 3.2  | None  | [:link:](https://www.mouser.fr/ProductDetail/Adafruit/2756?qs=sGAEpiMZZMuSK2mCDyT9crBR9UUNDPltQqpZaqADC8g%3d)   | 1  |   
+| Potentiometer |  100K  | [:link:](https://www.mouser.fr/ProductDetail/Bourns/PTV09A-4020U-B104?qs=%2fha2pyFaduhvapXs4is1IL5MTuddxsTCkr0fc6JrD7g2QA59By%252bflw%3d%3d)  | 5  |  
+| 3 DIP switch | None  | [:link:](https://www.mouser.fr/ProductDetail/CK/SDA03H1BD?qs=%2fha2pyFadujO%252bD1d0%2fA%252bWLFkqEV%2fBrm6lAVSO35a%2fyM%3d)  | 1  |  
+| DP3T switch | None  | [:link:](https://www.mouser.fr/ProductDetail/CK/OS203012MU5QP1?qs=%2fha2pyFaduixNo%252bc4UFQdwKaLaiPJgx8VDniAIBXV%2fi9XId9YW60xA%3d%3d)  | 1  |  
+|CS4344| None  | [:link:](https://www.mouser.fr/ProductDetail/Cirrus-Logic/CS4344-CZZ?qs=sGAEpiMZZMuYaq4aOfOV%252bEKBckiASbBM)  | 1  |  
+| QT2120 | None  | [:link:](https://www.mouser.fr/ProductDetail/Microchip-Technology-Atmel/AT42QT2120-XUR?qs=sGAEpiMZZMsVh0scArXy39GoFU3Q6EzjtRsYSCRuHwE%3d)  | 1  | 
+|KMR2 switch | None  | [:link:](https://www.mouser.fr/ProductDetail/CK/KMR231NGLFS?qs=sGAEpiMZZMsgGjVA3toVBPoYbSFtFlEEZ%2foF5FrvAI8%3d)  | 1  | 
+|AAA Holder | None  | [:link:](https://www.mouser.fr/ProductDetail/Keystone-Electronics/82?qs=sGAEpiMZZMsQtlBhqKq43YbiTvCk46ni)  | 6  | 
+| Jack Connector | None | [:link:](https://www.mouser.fr/ProductDetail/Switchcraft/35RAPC4BHN2?qs=sGAEpiMZZMv0W4pxf2HiV3fTUvSc3cBd2jSbOSYtPwc%3d) | 1|
+| Capacitor | 0.1uf | [:link:](https://www.mouser.fr/ProductDetail/KEMET/C1206C104MMREC7210?qs=sGAEpiMZZMsh%252b1woXyUXj6NiChfwzFayyr7622zgSs8%3d) | 2|
+| Polarised capacitor | 1uf | [:link:](https://www.mouser.fr/ProductDetail/AVX/F971E105MAAHT3?qs=sGAEpiMZZMukHu%252bjC5l7Yco8kKEM9uRbb54cngRv8Go%3d) | 1|
+| Polarised capacitor | 3.3uf | [:link:](https://www.mouser.fr/ProductDetail/AVX/F971C335MAAHT3?qs=sGAEpiMZZMukHu%252bjC5l7Yco8kKEM9uRb9xft%252bS%252bywL0%3d) | 3|
+| Polarised capacitor | 10uf | [:link:](https://www.mouser.fr/ProductDetail/KEMET/T491A106K016AT7280?qs=sGAEpiMZZMukHu%252bjC5l7YfojpQgWN8ePgdsBtgcMwmI%3d) | 1|
+| Diode | None | [:link:](https://www.mouser.fr/ProductDetail/ROHM-Semiconductor/RB160MM-40TFTR?qs=sGAEpiMZZMtQ8nqTKtFS%2fE7Jc%252bkgrGbhyaeUfQeErNAgcMoCDuX0KA%3d%3d) | 1|
+| Resistor | 470 | [:link:](https://www.mouser.fr/ProductDetail/KOA-Speer/SG73G2BTTD4700D?qs=sGAEpiMZZMukHu%252bjC5l7YW4TDpT9cCWZ7Y3pXreM%2fjU%3d) | 2|
+| Resistor | 2k2 | [:link:](https://www.mouser.fr/ProductDetail/TE-Connectivity-Holsworthy/CRGP1206F2K2?qs=sGAEpiMZZMve4%2fbfQkoj%252bNpsGoFOGLriQenFA4%2f97jM%3d) | 2|
+| Resistor | 10k | [:link:](https://www.mouser.fr/ProductDetail/Yageo/AC1206FR-1010KL?qs=sGAEpiMZZMve4%2fbfQkoj%252bO7jQjGJ2PPFatQsu75yNqQ%3d) | 13|
