@@ -6,7 +6,6 @@ I will use a teensy as main board for a few reason:
 
 * Teensy are awesome
 * Teensy audio library is awesome
-* Teensy support one-wire touch sensing
 * Teensy 3.6 has lots of input so it makes the whole build simpler
 
 Ok, so let's get started! 
@@ -21,16 +20,14 @@ Will use battery. To avoid using a tranformer, I will use 3 AAA battey (for a vo
 
 The teensy 3.6 will do:
 
-* Stereo DAC (Pin A22 and A21)
-* 11 touch pin (7 for chords, and 4 for notes)
+* I2S output (Pin 9,11,22,23)
+* I2C to touch chip
 * More than 6 analog pin (good for potentiometers)
 * More than 3 digital pin (good for root chord selection)
 
 #### DAC circuit
 
-Will take inspiration from [here](https://github.com/ghztomash/fasma_drum/blob/master/hardware/Fasma%20Drum%20Schematics.PDF)  for the filter then run it into a [LM4911](http://www.ti.com/lit/ds/symlink/lm4911.pdf) to get it to headphone level
-
-I should not forget to run a wire from the split analogue ground part back to the AGND pin. Check if it is ok to have a separate AGND gnd plane, and star wire it. 
+Will use the CS4344.
 
 #### Potentiometers and DIP switch and other hardware
 
@@ -46,6 +43,8 @@ Will get inspiration from [this guide](http://www.patternagents.com/news/2013/11
 Will be major only, minor by transposition as with the harmonica. Choice of chords, look [here](https://www.hooktheory.com/blog/i-analyzed-the-chords-of-1300-popular-songs-for-patterns-this-is-what-i-found/)
 
 add bare gnd surface on the back for grounding. Or check if it's ok with only ground plane.
+
+[Chip](http://ww1.microchip.com/downloads/en/DeviceDoc/doc9634.pdf) used for that
 
 
 #### Summing Up
