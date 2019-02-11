@@ -130,6 +130,15 @@ void CapacitiveV2::SetPinToOutput(int pin){
   boolean pingood;
   pingood = true;
   switch (pin){
+    case 0:
+        addr = K0Control;
+        break;
+    case 1:
+        addr = K1Control;
+        break;
+    case 2:
+        addr = K2Control;
+        break;
   	case 3:
   		addr = K3Control;
   		break;
@@ -178,6 +187,15 @@ void CapacitiveV2::SetOutput(int pin, int state){
   boolean pingood;
   pingood = true;
   switch (pin){
+    case 0:
+        addr = K0Control;
+        break;
+    case 1:
+        addr = K1Control;
+        break;
+    case 2:
+        addr = K2Control;
+        break;
   	case 3:
   		addr = K3Control;
   		break;
@@ -229,6 +247,15 @@ void CapacitiveV2::SetThreshold(int pin, byte threshold){
   boolean pingood;
   pingood = true;
   switch (pin){
+    case 0:
+        addr = K0Threshold;
+        break;
+    case 1:
+        addr = K1Threshold;
+        break;
+    case 2:
+        addr = K2Threshold;
+        break;
   	case 3:
   		addr = K3Threshold;
   		break;
@@ -274,6 +301,18 @@ boolean CapacitiveV2::ReadKey(int pin){
   boolean pingood;
   pingood = true;
   switch (pin){
+    case 0:
+        addr = keystatreg0to7;
+        bitmask = BIT0HI;
+        break;
+    case 1:
+        addr = keystatreg0to7;
+        bitmask = BIT1HI;
+        break;
+    case 2:
+        addr = keystatreg0to7;
+        bitmask = BIT2HI;
+        break;
   	case 3:
   		addr = keystatreg0to7;
   		bitmask = BIT3HI;
@@ -341,6 +380,15 @@ unsigned int CapacitiveV2::ReadSignal(int pin){
   boolean pingood;
   pingood = true;
   switch (pin){
+    case 0:
+        addr = K0Signal;
+        break;
+    case 1:
+        addr = K1Signal;
+        break;
+    case 2:
+        addr = K2Signal;
+        break;
   	case 3:
   		addr = K3Signal;
   		break;
