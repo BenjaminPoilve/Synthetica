@@ -17,6 +17,8 @@
 #define calibratereg    0x06
 #define keystatreg0to7	0x03
 #define keystatreg8to11	0x04
+#define DI	0x0B
+
 
 #define K0Control 0x1C
 #define K1Control 0x1D
@@ -438,6 +440,7 @@ unsigned int CapacitiveV2::ReadSignal(int pin){
 //Core Functions
 void CapacitiveV2::InitCapacitive(){
 	Wire.begin();
+    Capacitive.WriteRegister(DI,0);
 }
 
 void CapacitiveV2::SetSlider(){ //sets the Qt2120 to Slider Mode
