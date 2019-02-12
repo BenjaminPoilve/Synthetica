@@ -438,7 +438,6 @@ unsigned int CapacitiveV2::ReadSignal(int pin){
 //Core Functions
 void CapacitiveV2::InitCapacitive(){
 	Wire.begin();
-	Capacitive.SetSlider();
 }
 
 void CapacitiveV2::SetSlider(){ //sets the Qt2120 to Slider Mode
