@@ -1,5 +1,7 @@
 # Synthetica
 
+**Read about this project [here](https://www.benjaminpoilve.com/projects/synthetica.html)**
+
 The basic idea is to create a simple instrument, with on one side the chord selection, and on the other side the note selection (within that chord). 
 
 I will use a teensy as main board for a few reason:
