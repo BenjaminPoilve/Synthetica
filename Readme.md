@@ -8,7 +8,6 @@ I will use a teensy as main board for a few reason:
 
 * Teensy are awesome
 * Teensy audio library is awesome
-* Teensy 3.6 has lots of input so it makes the whole build simpler
 
 Will be major only, minor by transposition as with the harmonica. Choice of chords, look [here](https://www.hooktheory.com/blog/i-analyzed-the-chords-of-1300-popular-songs-for-patterns-this-is-what-i-found/)
 
